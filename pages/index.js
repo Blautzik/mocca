@@ -15,14 +15,14 @@ export default function Home() {
       <NavBar />
       <main className={styles.main}>
         <section>
-          <container className={styles.headerContainer}>
+          <div className={styles.headerContainer}>
 
             <h1 className={styles.title}>
               Abogado Accidente de Trabajo ART 
             </h1>
             <h2>Si Ud tuvo un accidente de trabajo o un accidente in itinere y le quedaron secuelas, podemos reclamar su indemnización</h2>
             <button>Consultanos por Whatsapp</button>
-          </container>
+          </div>
         </section>
 
 
