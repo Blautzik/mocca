@@ -1,5 +1,8 @@
-.container {
-  padding: 0 2rem;
+
+.headerContainer{
+  background-image: url('/img/pexels-photo-585419.png');
+  height: 256px;
+  width: 100%;
 }
 
 .main {
