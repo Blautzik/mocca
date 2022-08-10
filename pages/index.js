@@ -3,6 +3,9 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import NavBar from './Components/NavBar/NavBar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 export default function Home() {
   return (
@@ -17,11 +20,15 @@ export default function Home() {
         <section>
           <div className={styles.headerContainer}>
 
-            <h1 className={styles.title}>
+            <h1 className={styles.titleHeader}>
               Abogado Accidente de Trabajo ART 
             </h1>
-            <h2>Si Ud tuvo un accidente de trabajo o un accidente in itinere y le quedaron secuelas, podemos reclamar su indemnización</h2>
-            <button>Consultanos por Whatsapp</button>
+            <h2 className={styles.subtitleHeader}>Si Ud tuvo un accidente de trabajo o un accidente in itinere y le quedaron secuelas, podemos reclamar su indemnización</h2>
+            <button className={styles.headerButton}>
+            <FontAwesomeIcon icon={brands('whatsapp')} />
+              Consultanos por Whatsapp
+              
+            </button>
           </div>
         </section>
 
