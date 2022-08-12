@@ -1,0 +1,28 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 680px;
+  z-index: 999;
+}
+
+.titulo{
+  font-size: 4rem;
+  max-width: 60%;
+  text-align: center;
+  margin-top: 2px;
+  color: #222222;
+}
+
+.acento{
+  max-width: 500px;
+  text-align: center;
+  background-color: #038c7f;
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+

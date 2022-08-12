@@ -3,8 +3,8 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import NavBar from './Components/NavBar/NavBar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { FaWhatsapp } from 'react-icons/fa'
+import Presentation from './Components/Presentation/Presentation';
 
 
 export default function Home() {
@@ -18,19 +18,23 @@ export default function Home() {
       <NavBar />
       <main className={styles.main}>
         <section>
-          <div className={styles.headerContainer}>
+        <div className={styles.imgOverlay}></div>
+        <div className={styles.imgOverlayii}></div>
+        <div className={styles.headerContainer}></div>
+            <div className={styles.contentContainer}>
+              <h1 className={styles.titleHeader}>
+                Abogado Accidente de Trabajo ART 
+              </h1>
+              <h2 className={styles.subtitleHeader}>Si Ud tuvo un accidente de trabajo o un accidente in itinere y le quedaron secuelas, podemos reclamar su indemnización</h2>
+              <button className={styles.headerButton}>
+                <FaWhatsapp className={styles.icono}/>
+                Consultanos por Whatsapp
+              </button>
+            </div>
 
-            <h1 className={styles.titleHeader}>
-              Abogado Accidente de Trabajo ART 
-            </h1>
-            <h2 className={styles.subtitleHeader}>Si Ud tuvo un accidente de trabajo o un accidente in itinere y le quedaron secuelas, podemos reclamar su indemnización</h2>
-            <button className={styles.headerButton}>
-            <FontAwesomeIcon icon={brands('whatsapp')} />
-              Consultanos por Whatsapp
-              
-            </button>
-          </div>
         </section>
+
+        <Presentation/>
 
 
         <div className={styles.grid}>
@@ -94,12 +98,8 @@ export default function Home() {
               mas info +
             </span>
           </a>
-
-
-
         </div>
       </main>
-
     </div>
   )
 }

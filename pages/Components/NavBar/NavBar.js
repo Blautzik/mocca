@@ -13,6 +13,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import styles from './navBar.module.css';
+import { GoLaw } from "react-icons/go";
+import { FaWhatsapp } from 'react-icons/fa'
 
 const drawerWidth = 240;
 const navItems = ['art','despidos','accidentes'];
@@ -26,8 +29,8 @@ function NavBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} className={styles.nav}>
+      <Typography variant="h6" sx={{ my: 2 }} className={styles.brand}>
         Mocca & Asoc.
       </Typography>
       <Divider />
@@ -47,7 +50,7 @@ function NavBar(props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav">
+      <AppBar component="nav" className={styles.nav}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -59,20 +62,24 @@ function NavBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h5"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            className={styles.brand}
           >
-            MOCCA & ASOC
+            <GoLaw className={styles.brandIcon}/>
+            Mocca & Asoc
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }} className={styles.navLinks}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button key={item} sx={{ color: '#222222' }}>
                 {item}
               </Button>
             ))}
           </Box>
+          <FaWhatsapp className={styles.logoWapp}/>
         </Toolbar>
+
       </AppBar>
       <Box component="nav">
         <Drawer
