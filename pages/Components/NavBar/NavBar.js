@@ -1,109 +1,75 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
+import React, {useState} from 'react'
+import { Link } from '@mui/material'
+import styles from '../../../styles/NavBar.module.css'
+import Hidden from '@mui/material/Hidden'
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import styles from './navBar.module.css';
-import { GoLaw } from "react-icons/go";
-import { FaWhatsapp } from 'react-icons/fa'
+import Drawer from '@mui/material/Drawer'
+import CloseIcon from '@mui/icons-material/Close';
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
-const drawerWidth = 240;
-const navItems = ['art','despidos','accidentes'];
 
-function NavBar(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+const navLinks = [
+    {name:"Accidentes de Trabajo ART", href: "/"},
+    {name:"Enfermedades profesionales", href: "/"},
+    {name:"Accidentes de Transito", href: "/"},
+    {name:"Despidos", href: "/"},
+]
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} className={styles.nav}>
-      <Typography variant="h6" sx={{ my: 2 }} className={styles.brand}>
-        Mocca & Asoc.
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+function NavBar() {
 
+  const [open, setOpen] = useState(false)
+    
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav" className={styles.nav}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h5"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            className={styles.brand}
-          >
-            <GoLaw className={styles.brandIcon}/>
-            Mocca & Asoc
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }} className={styles.navLinks}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#222222' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-          <FaWhatsapp className={styles.logoWapp}/>
-        </Toolbar>
+    <>
+    <header className={styles.header}>
+        <div className={styles.logo}>
+            <img src="./img/Lex-logo.png" alt="logo" className={styles.logoimg}/>
+        </div>
+        <nav>
+            <Hidden mdDown>
+              <div className={styles.NavLinksContainer}>
+                { navLinks.map((item) => (<Link href={item.href} className={styles.link}>{item.name}</Link> )) }
+                </div>
+            </Hidden>
+            <Hidden mdUp>
+                <IconButton>
+                    <MenuIcon onClick={ () => setOpen(true) }/>
+                </IconButton>
+            </Hidden>
+        </nav>
+    </header>
+    <Drawer anchor='top' open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)} className={styles.drawer}>
+        <div className={styles.headerm}>
+        <div className={styles.logo}>
+            <img src="./img/Lex-logo.png" alt="logo" className={styles.logoimg}/>
+        </div>
+        <IconButton className={styles.close}>
+            <CloseIcon onClick={ () => setOpen(false)}/>
+        </IconButton>
+        </div>
+        <div className={styles.hamburguerLinks}>
+            <div className={styles.eachLink}>
+                <Link href="/" className={styles.linksm}>Accidentes de trabajo ART</Link>
+            </div>
+            <div className={styles.eachLink}>
+                <Link href="/" className={styles.linksm}>Enfermedades profesionales</Link>
+            </div>
+            <div className={styles.eachLink}>
+                <Link href="/" className={styles.linksm}>Accidentes de Tránsito</Link>
+            </div>
+            <div className={styles.eachLink}>
+                <Link href="/" className={styles.linksm}>Despidos</Link>
+            </div>
+        </div>
+    </Drawer>
 
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-    </Box>
-  );
+    </>
+ )
 }
 
-NavBar.propTypes = {
-  window: PropTypes.func,
-};
-
-export default NavBar;
+export default NavBar

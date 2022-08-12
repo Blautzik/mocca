@@ -1,0 +1,94 @@
+.header {
+  top: 0; left: 0; right: 0;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 4rem;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 99999999999;
+}
+
+.logo{
+  align-items: center;
+  display: flex;
+}
+
+.logotext {
+  font-size: 1.5rem;
+  color: var(--azulnegro);
+  font-weight: bolder;
+  text-decoration: none;
+  font-family: 'Poppins';
+}
+
+.logospan {
+  color:var(--acento);    
+  text-decoration: none;
+}
+
+.logoimg{
+  height: 2rem;
+}
+.NavLinksContainer{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link{
+  text-decoration: none;
+  color: #023535;
+}
+
+
+
+.close{
+  height: 3.8rem;
+  display: flex;
+  justify-content: right;
+}
+
+
+.hamburguerLinks{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: right;
+  padding-right: 1rem;
+  padding-bottom: 32px;
+}
+
+.linksm{
+  text-decoration: none;
+  color: var(--azulnegro);
+}
+
+.eachLink{
+  display: flex;
+  align-items: center;
+  padding:16px 1rem;
+  font-size: 16px;
+  color: #023535;
+}
+
+.icon{  
+  margin-right: 8px;
+}
+
+.headerm {
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 4rem;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 32px;
+}
+
+.drawer {
+  padding-bottom: 32px;
+}
