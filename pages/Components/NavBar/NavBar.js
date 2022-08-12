@@ -33,7 +33,7 @@ function NavBar() {
         <nav>
             <Hidden mdDown>
               <div className={styles.NavLinksContainer}>
-                { navLinks.map((item) => (<Link href={item.href} className={styles.link}>{item.name}</Link> )) }
+                { navLinks.map((item) => (<Link href={item.href} key={item.name} className={styles.link}>{item.name}</Link> )) }
                 </div>
             </Hidden>
             <Hidden mdUp>
