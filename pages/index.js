@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>Estudio Jurídico Mocca accidentes de trabajo laboral ART</title>
         <meta name="description" content="accidentes de trabajo laboral ART" />
-        <meta name="google-site-verification" content="google-site-verification=kdF53Bf7O0fRzhu0gOXSPCRVZjIEYzFYajAMdlcBups" />
+        <meta name="google-site-verification" content="kdF53Bf7O0fRzhu0gOXSPCRVZjIEYzFYajAMdlcBups" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
