@@ -1,10 +1,15 @@
 import '../styles/globals.css'
-import "@fortawesome/fontawesome-svg-core/styles.css"; 
-import { config } from "@fortawesome/fontawesome-svg-core";
-config.autoAddCss = false; 
+import NavB from './Components/NavB/NavB';
+import Nav from './Components/NavBa/NavBa'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+  <>
+    {/* <NavB /> */}
+    <Nav className='drop-shadow-md' />
+    <Component {...pageProps} />
+  </>
+  )
 }
 
 export default MyApp
