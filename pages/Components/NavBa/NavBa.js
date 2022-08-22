@@ -29,10 +29,10 @@ const NavBa = () =>  {
               </Link>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline flex-end space-x-4">
-                  <Link href='/art'>
-                    <span className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <Link href='/accidentes-de-trabajo-art'>
+                    <a className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
                       Accidentes de trabajo ART
-                    </span>
+                    </a>
                   </Link>
                   <Link href='/enfermedades-profesionales'>
                     <span className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
@@ -116,7 +116,7 @@ const NavBa = () =>  {
               </Link>
             <div className="md:hidden h-full" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3  space-y-1 sm:px-3 h-full">
-                <Link href='/art'>
+                <Link href='/accidentes-de-trabajo-art'>
                   <span onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Accidentes de trabajo ART
                   </span>
