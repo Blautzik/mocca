@@ -35,19 +35,19 @@ const NavBa = () =>  {
                     </a>
                   </Link>
                   <Link href='/enfermedades-profesionales'>
-                    <span className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                    <a className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
                       Enfermedades profesionales
-                    </span>
+                    </a>
                   </Link>
                   <Link href='/despidos'>
-                    <span className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                    <a className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
                       Despidos
-                    </span>
+                    </a>
                   </Link>
                   <Link href='/accidentes-de-transito'>
-                    <span className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                    <a className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
                       Accidentes de tránsito
-                    </span>
+                    </a>
 
                   </Link>
                 </div>
@@ -111,32 +111,32 @@ const NavBa = () =>  {
         >
               <Link href='/'>
                 <div className="absolute w-20 h-16  -top-16 left-10"onClick={() => setIsOpen(!isOpen)}>
-                  <span>.</span>
+                  <a>.</a>
                 </div>
               </Link>
             <div className="md:hidden h-full" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3  space-y-1 sm:px-3 h-full">
                 <Link href='/accidentes-de-trabajo-art'>
-                  <span onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <a onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Accidentes de trabajo ART
-                  </span>
+                  </a>
                 </Link>
 
                 <Link href='/enfermedades-profesionales'>
-                  <span onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <a onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Enfermedades profesionales
-                  </span>
+                  </a>
                 </Link>
 
                 <Link href='/despidos'>
-                  <span onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <a onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Despidos
-                  </span>
+                  </a>
                 </Link>
                 <Link href='/accidentes-de-transito'>
-                  <span onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <a onClick={() => setIsOpen(!isOpen)} className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Accidentes de tránsito
-                  </span>
+                  </a>
                 </Link>
               </div>
             </div>
